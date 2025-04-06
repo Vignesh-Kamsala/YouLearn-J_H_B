@@ -6,10 +6,13 @@ import { connectDB } from './config/db.js';
 import User from './models/user.model.js';
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
+
+
 dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+app.use(express.static('public'));
 
 app.use(cors({
   origin: 'http://localhost:5173',  // allow Vite frontend
